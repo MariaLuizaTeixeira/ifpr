@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários com JS</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return processar_form()">
+
+        <input type="text" id="tarefa" placeholder="Informe uma tarefa...">
+        <br>
+        <input type="number" id="prioridade" placeholder="Informe uma prioridade..." >
+        <input type="submit" value="enviar!">
+
+        <h2>Tarefas Cadastradas</h2>
+
+        <ul id="tarefas-cadastradas">
+        </ul>
+    </form>
+
+
+    <script>
+        // alert("uhuulll!");
+
+        let listaTarefas = [];
+
+        let tarefa_elem = document.querySelector("#tarefa");
+        let prioridade_elem = document.querySelector("#prioridade");
+        let ul_elem = document.querySelector("#tarefas-cadastradas");
+
+        function processar_form() {
+            let tarefa = tarefa_elem.value.trim();
+
+            if (tarefa === "") {
+                alert("A tarefa não pode estar vazia.");
+                return false;
+            }
+
+            let prioridade = prioridade_elem.value.trim();
+
+            if (prioridade < 0 || prioridade > 10) {
+                alert("O número na prioridade tem que ser entre 1 e 10.");
+                return false;
+            }
+
+            listaTarefas.push(tarefa);
+
+            let li = document.createElement("li");
+            li.textContent = tarefa;
+            ul_elem.appendChild(li);
+
+            localStorage.setItem("chave", "um valor que quero armazenar");
+            localStorage.setItem("tarefa", tarefa);
+            console.log(tarefa.value);
+            return false;
+        }
+
+
+    </script>
+</body>
+
+</html>
