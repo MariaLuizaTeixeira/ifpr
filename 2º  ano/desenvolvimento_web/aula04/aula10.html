@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" name="viewport" content="width=device-width, height=device-height, initial-scale=1.0,
+            maximum-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet"
+            type="text/css" />
+    <title>Recados</title>
+    
+</head>
+
+<body>
+    <form action="" method="get">
+        <input type="text" name="autor" value="malu" placeholder="informe o seu nome...">
+        <br>
+
+        <div>
+            <label for="">personagem</label>
+            <br>
+            <input type="radio" checked value="X" name="campo_personagem"> X
+            <br>
+            <input type="radio" value="Y" name="campo_personagem"> Y
+            <br>
+            <input type="radio" value="Z" name="campo_personagem"> Z
+        </div>
+
+        <div>
+            <label for="habilidades">Habilidades</label> <br>
+            <input type="checkbox" value="Javascript" name="campo_halibidades"> Javascript <br>
+            <input type="checkbox" value="HTML" name="campo_halibidades"> HTML <br>
+            <input type="checkbox" value="PHP" name="campo_halibidades"> PHP <br>
+        </div>
+
+        <div>
+            <select name="campo_cor_favorita" required>
+                <option value="" selected disabled>escolha uma cor...</option>
+                <option value="azul">azul</option>
+                <option value="verde">verde</option>
+                <option value="vermelho">vermelho</option>
+            </select>
+        </div>
+        <label for="">Recado</label>
+        <textarea name="mensagem" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="enviar">
+    </form>
+
+    <div id="froala-editor"> </div>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+        <script>
+                new FroalaEditor("textarea");
+        </script>
+</body>
+
+</html>
