@@ -82,7 +82,8 @@ button:hover {
 }
 
 .form-image img {
+    float: left;
     border-radius: 8px;
-    height: 10px;
-    width: 5px;
+    height: 966px;
+    width: 1300px;
 }
