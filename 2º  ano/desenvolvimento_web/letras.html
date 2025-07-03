@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letras</title>
+
+    <style>
+        .letras {
+            flex: auto;
+            flex-direction: row;
+            justify-content: space-around;
+            background-color: blueviolet;
+            border-radius: 15px;
+            height: 500px;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .letra {
+            justify-content: center;
+            padding: 80px;
+            border: solid 10px;
+            background-color: palevioletred;
+            color: white;
+            display: flex;
+            border-radius: 15px;
+            flex: auto;
+            margin: 10px;
+  
+        }
+
+        .a { 
+            align-self: auto;
+        }
+
+        .a {
+            align-self: flex-start;
+        }
+
+        .e{
+            align-self: stretch;
+        }
+
+        .i{
+            align-self: center;
+        }
+
+        .o{
+            align-self: flex-end;
+        }
+
+        .u{
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="letras">
+        <div class="letra a">A</div>
+        <div class="letra e">E</div>
+        <div class="letra i">I</div>
+        <div class="letra o">O</div>
+        <div class="letra u">U</div>
+    </div>
+</body>
+
+</html>
