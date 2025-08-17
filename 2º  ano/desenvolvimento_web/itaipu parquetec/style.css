@@ -330,3 +330,102 @@
 ul {
     list-style-type: none;
 }
+
+.rodape {
+    background-color: #00315E;
+}
+
+.esquerda {
+    margin-left: 20px;
+}
+
+.imagem-rodape {
+    margin-top: 85px;
+}
+
+.imagem-rodape img {
+    height: 40px;
+    width: 146px;
+}
+
+.menu-rodape ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+.menu-rodape i {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #00315E;
+    background-color: #0082C4;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.menu-rodape a {
+    text-decoration: none;
+}
+
+.menu-rodape li:hover i {
+    background-color: transparent;
+    color: #0082C4;
+}
+
+.rodape p {
+    color: white;
+}
+
+.rodape .nome {
+    font-weight: bold;
+}
+
+.direita {
+    float: right;
+    margin-top: -230px;
+    color: white;
+    margin-right: 200px;
+}
+
+.direita li {
+    margin-top: 5px;
+}
+
+.rodape button {
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 350px;
+    height: 35px;
+    background-image: linear-gradient(to bottom, #0082C4, #00315E);
+    border-color: #00315E;
+    color: white;
+    font-style: italic;
+    font-weight: 530;
+    font-size: 14px;
+}
+
+.copyright {
+    margin-top: 60px;
+    margin-left: 400px;
+}
+
+.copyright p {
+    color: #0082C4;
+    margin-bottom: 10px;
+}
+
+.rodape .topo button {
+    width: 155px;
+    float: right;
+    margin-right: -500px;
+    margin-top: -200px;
+}
