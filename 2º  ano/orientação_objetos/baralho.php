@@ -150,4 +150,44 @@ array_push($cartas, $carta);
 
 print_r($cartas);
 
+print("---------- BEM VINDO(A) AO ADIVINHE A CARTA ----------\n");
+ print("\n-----------MENU-----------\n");
+    print("1 - JOGAR\n");
+    print("2 - CATÁLOGO DE CARTAS\n");
+    print("3 - INSTRUÇÕES\n");
+    print("4 - PONTUAÇÃO\n");
+    print("0- SAIR\n");
+
+    $opcao = readline("Informe a opção: ");
+
+    switch ($opcao) {
+        case 0:
+            print("Programa encerrado!");
+        break;
+
+        case 1:
+            $sorteado = array_rand($cartas);
+            $tentativa = strtolower(readline("Insira o nome da carta de sua tentativa: "));
+            print($tentativa);
+        break;
+        
+        case 2: 
+            
+        break;
+
+        case 3:
+            # code...
+        break;
+
+        case 4:
+            # code...
+        break;
+
+        default:
+            ("Opção inválida, tente novamente.");
+        break;
+    }
+
+        
+
 ?>
