@@ -1,16 +1,34 @@
 <?php
 
 $cartas = array();
+    
 
 class Carta
 {
-    private $numero;
-    private $nome;
-    private $dica;
-
-    public function __toString() {
-
-    }
+    private int $numero;
+    private string $nome;
+    private array $dica = array("Mago" => "dica mago",
+    "Sacerdotisa" => "dica sacerdotisa",
+    "Imperatriz" => "dica imperatriz",
+    "Imperador" => "dica imperador",
+    "Papa" => "dica papa",
+    "Enamordos" => "dica enamorados",
+    "Carro de Guerra" => "dica carro",
+    "Justiça" => "dica justiça",
+    "Eremita" => "dica eremita", 
+    "Roda da Fortuna" => "dica roda",
+    "Força" => "dica força",
+    "Enforcado" => "dica enforcado",
+    "Morte" => "dica morte",
+    "Temperança" => "dica temperança", 
+    "Diabo" => "diabo",
+    "Torre Fulminada" => "dica torre",
+    "Estrela" => "dica estrela",
+    "Lua" => "dica lua",
+    "Sol" => "dica sol",
+    "Julgamento" => "dica julgamento",
+    "Mundo" => "dica mundo",
+    "Louco" => "dica louco");
 
     public function getNumero()
     {
@@ -36,6 +54,8 @@ class Carta
         return $this;
     }
 }
+
+$pontuacao = 0;
 
 $carta = new Carta();
 $carta->setNome("Mago");
@@ -148,10 +168,9 @@ $carta->setNome("Louco");
 $carta->setNumero(22);
 array_push($cartas, $carta);
 
-print_r($cartas);
-
-print("---------- BEM VINDO(A) AO ADIVINHE A CARTA ----------\n");
- print("\n-----------MENU-----------\n");
+do {
+    print("\nBEM VINDO(A) AO ADIVINHE A CARTA\n");
+    print("\n----------- MENU -----------\n");
     print("1 - JOGAR\n");
     print("2 - CATÁLOGO DE CARTAS\n");
     print("3 - INSTRUÇÕES\n");
@@ -163,31 +182,73 @@ print("---------- BEM VINDO(A) AO ADIVINHE A CARTA ----------\n");
     switch ($opcao) {
         case 0:
             print("Programa encerrado!");
-        break;
+            break;
 
         case 1:
-            $sorteado = array_rand($cartas);
-            $tentativa = strtolower(readline("Insira o nome da carta de sua tentativa: "));
-            print($tentativa);
-        break;
-        
-        case 2: 
-            
-        break;
+            $sorteado = $cartas[array_rand($cartas)];
+            $acerto = 0;
+            do {
+                $tentativa = ucfirst(readline("Insira o nome da carta de sua tentativa: "));
+                print($sorteado->getNome());
+                $dica[$sorteado->getNome()];
+                if ($tentativa == $sorteado->getNome()) {
+                    print("Você acertou!\n");
+                    $acerto = 1;
+                    $pontuacao++;
+                } else {
+                    print("Não é essa carta :(\n");
+                    $novamente = readline("1 - Tentar novamente.\n 2 - Receber dica\n");
+                    switch ($novamente) {
+                        case 2:
+                            print("Sua dica é " . $dica["$sorteado->getNome()"]);
+                            break;
+                        
+                        default:
+                            print("Insira uma opção válida!\n");
+                            break;
+                    }
+                }
+            } while ($acerto != 0);
+
+            break;
+
+        case 2:
+            print("\nCATÁLOGO DE CARTAS\n");
+            print("1 - Mago\n");
+            print("2 - Sacerdotisa\n");
+            print("3 - Imperatriz\n");
+            print("4 - Imperador\n");
+            print("5 - Papa\n");
+            print("6 - Enamorados\n");
+            print("7 - Carro de Guerra\n");
+            print("8 - Justiça\n");
+            print("9 - Eremita\n");
+            print("10 - Roda da Fortuna\n");
+            print("11 - Força\n");
+            print("12 - Enforcado\n");
+            print("13 - Morte\n");
+            print("14 - Temperança\n");
+            print("15 - Diabo\n");
+            print("16 - Torre Fulminada\n");
+            print("17 - Estrela\n");
+            print("18 - Lua\n");
+            print("19 - Sol\n");
+            print("20 - Julgamento\n");
+            print("21 - Mundo\n");
+            print("22 - Louco\n");
+            break;
 
         case 3:
-            # code...
-        break;
+            print("INSTRUÇÕES\n");
+            print("Para jogar vá ao menu e digite \"1\" para jogar. Insira o nome da carta a ser chutada. É possível chutar até acertar, mas se desejado peça uma dica (palavras-chave sobre o significado da carta).\n Para ver as cartas que podem ser sorteadas, vá ao menu e digite \"2\".\n Para ver seu saldo de pontos, vá ao menu e digite \"4\".\n Para sair, vá ao menu e digite \"0\".\n");
+            break;
 
         case 4:
-            # code...
-        break;
+            print("Sua pontuação é " . $pontuacao . " pontos.\n");
+            break;
 
         default:
             ("Opção inválida, tente novamente.");
-        break;
+            break;
     }
-
-        
-
-?>
+} while ($opcao != 0);
