@@ -1,39 +1,106 @@
 <?php
 
-require_once("modelo/Filme.php");
+class Filme{
+    private string $nome;
+    private int $nota;
+    private string $url_imagem;
+    private string $genero;
+    private int $decada;
 
-$filme = new Filme();
-$filme->setNome($_POST['nome']); 
-$filme->setNota($_POST['nota']);
-$filme->setUrl_imagem($_POST['url']); 
-$filme->setGenero($_POST['genero']);
-$filme->setDecada($_POST['decada']); 
-?>
+    public function converterNumeroParaDecada(int $decada) {
+        switch ($decada) {
+            case 1:
+                return "20";
+            
+            case 2:
+                return "30";
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Info. Filme</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
+            case 3:
+                return "40";
 
-  <body>
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card’s content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+            case 4:
+                return "50";
+
+            case 5:
+                return "60";
+
+            case 6:
+                return "70";
+
+            case 6:
+                return "80";
+
+            case 6:
+                return "90";
+
+            case 6:
+                return "2000";
+
+            case 6:
+                return "2010";
+
+            case 6:
+                return "2020";
+        }
+    }
+
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    public function setNome(string $nome)
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    public function getNota()
+    {
+        return $this->nota;
+    }
+
+    public function setNota(int $nota)
+    {
+        $this->nota = $nota;
+
+        return $this;
+    }
+
+    public function getUrl_imagem()
+    {
+        return $this->url_imagem;
+    }
+
+    public function setUrl_imagem(string $url_imagem)
+    {
+        $this->url_imagem = $url_imagem;
+
+        return $this;
+    }
+
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    public function setGenero(string $genero)
+    {
+        $this->genero = $genero;
+
+        return $this;
+    }
+ 
+    public function getDecada()
+    {
+        return $this->decada;
+    }
+
+    public function setDecada(int $decada)
+    {
+        $this->decada = $decada;
+
+        return $this;
+    }
+}
