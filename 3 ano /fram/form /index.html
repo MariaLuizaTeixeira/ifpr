@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form Builder</title>
+</head>
+<body>
+<form>
+    <h1>Crie seu formulário</h1>
+    <button type="button" onclick="novoCampo()">Novo campo</button>
+    <button type="button" onclick="visualizarForm()">Concluir</button>
+    <hr>
+
+    <label>Rótulo</label>
+    <input type="text" name="rotulo0">
+
+    <label>Tipo</label>
+    <select name="tipo0">
+        <option value="text">Texto</option>
+        <option value="number">Número</option>
+        <option value="date">Data</option>
+        <option value="select">Opções</option>
+        <option value="textarea">Área de texto</option>
+    </select>
+
+    <label>Opções (separar por vírgula):</label>
+    <input type="text" name="opcoes0" placeholder="ex: Sim,Não,Talvez">
+    <br>
+</form>
+
+<iframe id="preview" style="width:100%; height:300px;"></iframe>
+
+<script src="script.js"></script>
+</body>
+</html>
