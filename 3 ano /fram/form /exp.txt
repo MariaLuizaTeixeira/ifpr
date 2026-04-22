@@ -1,0 +1,20 @@
+Como usar o Form Builder
+
+Cada linha representa um campo do seu formulário.
+
+1. Preencha o Rótulo
+É o nome que vai aparecer antes do campo. Ex: `Nome`, `Idade`, `Data de nascimento`
+
+2. Escolha o Tipo
+- Texto — caixa de texto livre
+- Número — aceita só números
+- Data — abre um calendário
+- Opções — lista suspensa para o usuário escolher
+- Área de texto — caixa grande para textos longos
+
+3. Se escolheu "Opções"
+Preencha o campo Opções com as opções separadas por vírgula. Ex: `Sim,Não,Talvez`
+
+4. Clique em "Novo campo" para adicionar mais campos ao formulário.
+
+5. Clique em "Concluir" para ver o formulário pronto na parte de baixo da página.
